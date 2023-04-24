@@ -8,6 +8,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit some common PixelExperience stuff.
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_INCLUDE_STOCK_ARCORE := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_USES_AOSP_RECOVERY := true
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -16,8 +24,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -221,10 +228,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm845
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
-
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -346,10 +349,6 @@ PRODUCT_BOOT_JARS += \
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \

@@ -168,6 +168,8 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
+-vendor/lib/libplatformconfig.so
+-vendor/lib64/libplatformconfig.so
 
 # Display (HDR) - from PNX - RKQ1.200906.002
 vendor/lib/libhdr_tm.so|1e8a647523db0a09c9587a77f1f7b132a03c2354
